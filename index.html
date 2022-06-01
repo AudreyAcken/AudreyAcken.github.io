@@ -65,9 +65,9 @@
 
       const f = document.getElementById('form');
       const q = document.getElementById('query');
-      const url = 'http:/54.215.215.60/search?term='+q.value;
 
       function submitted(event) {
+        const url = 'http:/54.215.215.60/search?term='+q.value;
         event.preventDefault();
         console.log("URL = " + url);
         fetch(url, { method: 'GET'})
