@@ -76,7 +76,7 @@
                 var output = document.getElementById("results");
                 if (response.ok) {
                     
-                    output.innerHTML = response.text;
+                    output.innerHTML = response.text();
 
                 } else {
                     output.innerHTML = "error<br/>" + response;
