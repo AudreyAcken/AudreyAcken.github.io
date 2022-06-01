@@ -65,12 +65,10 @@
 
       const f = document.getElementById('form');
       const q = document.getElementById('query');
-      const google = 'http:/54.215.215.60/search?q=site%3A+';
-      const site = 'pagedart.com';
+      const url = 'http:/54.215.215.60/search?term='+q.value;
 
       function submitted(event) {
         event.preventDefault();
-        const url = google + site + '+' + q.value;
         console.log("URL = " + url);
         fetch(url, { method: 'GET', 
                      mode: 'cors'})
@@ -79,7 +77,7 @@
                 var output = document.getElementById("results");
                 if (response.ok) {
                     
-                    output.innerHTML = "got results: " + response; 
+                    output.innerHTML = response.text;
 
                 } else {
                     output.innerHTML = "error<br/>" + response;
