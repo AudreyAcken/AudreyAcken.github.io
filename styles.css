@@ -49,10 +49,3 @@ body {
         font-size: 16px;
         line-height: 1.5;
     }
-
-.math-equation {
-    display: inline-block;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #f5f5f5;
-}
