@@ -1,22 +1,21 @@
 <!DOCTYPE html>
+<html>
 <head>
-
+    <style>
+        #container {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
-    <h1>First html document</h1>
+    <div id="container"></div>
 
-    <!-- Add a bit of text -->
-    <p>This is my first sentence</p>
-
-    <!-- Add a svg shape. Note that the 'target' class is attributed to the circle -->
-    <svg>
-        <circle class="target" style="fill: #69b3a2" stroke="black" cx=50 cy=50 r=40></circle>
-    </svg>
-
-    <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
-
-    <script>d3
-            .select(".target")  // select the elements that have the class 'target'
-            .style("stroke-width", 8) // change their style: stroke width is not equal to 8 pixels</script>
+    <script>d3.select("#container")
+            .transition()
+            .duration(1000)
+            .style("background-color", "red");</script>
 </body>
+</html>
