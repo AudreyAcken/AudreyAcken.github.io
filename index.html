@@ -1,93 +1,22 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
-  <head>
-    <meta charset='UTF-8'>
-    <title>Riptide</title>
-    <style>
-        body {
-        background-color: #2480f8;
-        margin: 200px 40%;
-      }
+<head>
 
-      form {
-        background-color: #95c2f9;
-        width: 300px;
-        height: 44px;
-        border-radius: 5px;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-      }
+</head>
+<body>
+    <h1>First html document</h1>
 
-      input {
-        all: unset;
-        font: 16px system-ui;
-        color: #fff;
-        height: 100%;
-        width: 100%;
-        padding: 6px 10px;
-      }
+    <!-- Add a bit of text -->
+    <p>This is my first sentence</p>
 
-      ::placeholder {
-        color: #fff;
-        opacity: 0.7; 
-      }
+    <!-- Add a svg shape. Note that the 'target' class is attributed to the circle -->
+    <svg>
+        <circle class="target" style="fill: #69b3a2" stroke="black" cx=50 cy=50 r=40></circle>
+    </svg>
 
-      svg {
-        color: #fff;
-        fill: currentColor;
-        width: 24px;
-        height: 24px;
-        padding: 10px;
-      }
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
 
-      button {
-        all: unset;
-        cursor: pointer;
-        width: 44px;
-        height: 44px;
-      }
-    </style>
-  </head>
-  <body>
-    <form role="search" id="form">
-      <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
-      <button>
-        <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
-      </button>
-    </form>
-    <div id="results">
-
-    </div>
-    <script>
-      
-      
-
-      const f = document.getElementById('form');
-      const q = document.getElementById('query');
-
-      function submitted(event) {
-        const url = 'http:/54.215.215.60/search?term='+q.value;
-        event.preventDefault();
-        console.log("URL = " + url);
-        fetch(url, { method: 'GET'})
-            .then((response) => {
-                if (response.ok) {
-                    return response.text();
-
-                }})
-            .then((data) => { 
-                console.log(data);
-                var output = document.getElementById("results");
-                output.innerHTML = data;
-
-            })
-            .catch((error) => console.error("FETCH ERROR: ", error))
-        //const win = window.open(url, '_blank');
-        //win.focus();
-      }
-
-      f.addEventListener('submit', submitted);
-    </script>
-  </body>
-</html>
+    <script>d3
+            .select(".target")  // select the elements that have the class 'target'
+            .style("stroke-width", 8) // change their style: stroke width is not equal to 8 pixels</script>
+</body>
