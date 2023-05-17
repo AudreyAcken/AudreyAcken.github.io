@@ -10,9 +10,6 @@ body {
     max-width: 600px;
     padding: 20px;
     text-align: left;
-    position: relative;
-    left: 33.33%;
-    transform: translateX(-33.33%);
 }
 
 h1 {
