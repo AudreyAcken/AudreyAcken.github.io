@@ -1,0 +1,36 @@
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+}
+
+h1 {
+    color: lightsteelblue;
+}
+
+.link-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .link-list li {
+        margin: 10px 0;
+    }
+
+    .link-list a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .link-list a:hover {
+            color: lightsteelblue;
+        }
