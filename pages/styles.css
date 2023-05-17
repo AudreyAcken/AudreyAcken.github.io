@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    color: lightsteelblue;
+    color: #2e86c1;
 }
 
 .link-list {
@@ -32,5 +32,5 @@ h1 {
     }
 
         .link-list a:hover {
-            color: lightsteelblue;
+            color: #2e86c1;
         }
