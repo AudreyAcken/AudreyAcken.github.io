@@ -33,6 +33,7 @@ function update() {
         .join('circle')
         .attr('cx', function (d) { return d.x; })
         .attr('cy', function (d) { return d.y; })
+        .attr('opacity', 0.3)
         .attr('r', 20);
 }
 
