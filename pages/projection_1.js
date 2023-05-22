@@ -15,17 +15,6 @@ function initDrag() {
         .call(drag);
 }
 
-function updateData() {
-    data = [];
-    for (let i = 0; i < numPoints; i++) {
-        data.push({
-            id: i,
-            x: Math.random() * width,
-            y: Math.random() * height
-        });
-    }
-}
-
 function update() {
     d3.select('svg')
         .selectAll('circle')
@@ -37,6 +26,5 @@ function update() {
         .attr('r', 20);
 }
 
-updateData();
 update();
 initDrag();
