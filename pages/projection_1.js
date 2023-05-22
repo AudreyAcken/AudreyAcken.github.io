@@ -1,4 +1,4 @@
-let data = [], width = 400, height = 400, numPoints = 3;
+let data = [{ id: 0, x: 200, y: 200 }, { id: 1, x: 100, y: 200 },{ id: 2, x: 200, y: 100 }], width = 400, height = 400, numPoints = 3;
 
 let drag = d3.drag()
     .on('drag', handleDrag);
