@@ -26,6 +26,7 @@ function update() {
         .attr('cy', function (d) { return d.y; })
         .attr('opacity', 0.3)
         .attr('r', 20);
+    vector_data = [{ id: 0, x1: circle_data[0]["x"], y1: circle_data[0]["y"], x2: circle_data[1]["x"], x2: circle_data[1]["y"] }, { id: 1, x1: circle_data[0]["x"], y1: circle_data[0]["y"], x2: circle_data[2]["x"], y2: circle_data[2]["y"] }];
     d3.select('svg')
         .selectAll('line')
         .data(vector_data)
