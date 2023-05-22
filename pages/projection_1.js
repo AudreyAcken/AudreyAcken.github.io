@@ -1,4 +1,5 @@
-let data = [{ id: 0, x: 200, y: 200 }, { id: 1, x: 100, y: 200 },{ id: 2, x: 200, y: 100 }], width = 400, height = 400, numPoints = 3;
+let circle_data = [{ id: 0, x: 200, y: 200 }, { id: 1, x: 100, y: 100 }, { id: 2, x: 250, y: 70 }];
+let vector_data = [{ id: 0, x1: 200, y1: 200, x2: 100, x2: 100 }, {id:1, x1:200, y1:200, x2:250, y2:70}]
 
 let drag = d3.drag()
     .on('drag', handleDrag);
@@ -16,14 +17,27 @@ function initDrag() {
 }
 
 function update() {
+
     d3.select('svg')
         .selectAll('circle')
-        .data(data)
+        .data(circle_data)
         .join('circle')
         .attr('cx', function (d) { return d.x; })
         .attr('cy', function (d) { return d.y; })
         .attr('opacity', 0.3)
         .attr('r', 20);
+    vector_data[0]["x1"] = circle_data[0]["x"];
+    vector_data[0]["y1"] = circle_data[0]["y"];
+    d3.select('svg')
+        .selectAll('line')
+        .data(vector_data)
+        .join('line')
+        .attr('x1', function (d) { return d.x1; })
+        .attr('y1', function (d) { return d.y1; })
+        .attr('x2', function (d) { return d.x2; })
+        .attr('y2', function (d) { return d.y2; })
+        .attr('stroke-width', 4)
+        .attr('marker-end', "url(#arrowhead)")
 }
 
 update();
