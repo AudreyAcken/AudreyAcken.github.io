@@ -38,7 +38,7 @@ function update() {
         .attr('opacity', 0.3)
         .attr('r', 20);
 
-    vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "black", marker: "url(#arrowhead)" },
+    vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "blue", marker: "url(#arrowhead_blue)" },
                     { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     {
                         id: 2,
