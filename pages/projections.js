@@ -1,5 +1,5 @@
-let origin_x = 200, origin_y = 300;
-let circle_data = [{ id: 0, x: origin_x, y: origin_y }, { id: 1, x: 100, y: 100 }, { id: 2, x: 250, y: 70 }];
+﻿let origin_x = 200, origin_y = 300;
+let circle_data = [{ id: 1, x: 100, y: 100 }, { id: 2, x: 250, y: 70 }];
 let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[2]["x"], y2: circle_data[2]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     {
