@@ -1,13 +1,13 @@
 ﻿let origin_x = 200, origin_y = 300;
-let circle_data = [{ id: 1, x: 100, y: 100 }, { id: 2, x: 250, y: 70 }];
-let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
-                    { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[2]["x"], y2: circle_data[2]["y"], stroke: "black", marker: "url(#arrowhead)" },
+let circle_data = [{ id: 0, x: 100, y: 100 }, { id: 1, x: 250, y: 70 }];
+let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "black", marker: "url(#arrowhead)" },
+                    { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     {
                         id: 2,
                         x1: origin_x,
                         y1: origin_y,
-                        x2: origin_x + ((circle_data[2]["x"] - origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (origin_y - circle_data[1]["y"]) * (origin_y - circle_data[2]["y"])) / ((circle_data[2]["x"] - origin_x) ** 2 + (origin_y - circle_data[2]["y"]) ** 2)),
-                        y2: origin_y - ((- circle_data[2]["y"] + origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (origin_y - circle_data[1]["y"]) * (origin_y - circle_data[2]["y"])) / ((circle_data[2]["x"] - origin_x) ** 2 + (origin_y - circle_data[2]["y"]) ** 2)),
+                        x2: origin_x + ((circle_data[1]["x"] - origin_x) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
+                        y2: origin_y - ((- circle_data[1]["y"] + origin_y) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
                         stroke: "red",
                         marker: "url(#arrowhead_red)"
                     }];
@@ -38,14 +38,14 @@ function update() {
         .attr('opacity', 0.3)
         .attr('r', 20);
 
-    vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)"  },
-                    { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[2]["x"], y2: circle_data[2]["y"], stroke: "black", marker: "url(#arrowhead)" },
+    vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "black", marker: "url(#arrowhead)" },
+                    { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     {
                         id: 2,
                         x1: origin_x,
                         y1: origin_y,
-                        x2: origin_x + ((circle_data[2]["x"] - origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (origin_y - circle_data[1]["y"]) * (origin_y - circle_data[2]["y"])) / ((circle_data[2]["x"] - origin_x) ** 2 + (origin_y - circle_data[2]["y"]) ** 2)),
-                        y2: origin_y - ((- circle_data[2]["y"] + origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (origin_y - circle_data[1]["y"]) * (origin_y - circle_data[2]["y"])) / ((circle_data[2]["x"] - origin_x) ** 2 + (origin_y - circle_data[2]["y"]) ** 2)),
+                        x2: origin_x + ((circle_data[1]["x"] - origin_x) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
+                        y2: origin_y - ((- circle_data[1]["y"] + origin_y) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
                         stroke: "red",
                         marker: "url(#arrowhead_red)"
                     }];
