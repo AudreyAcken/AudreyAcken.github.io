@@ -6,8 +6,8 @@ let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"],
                         id: 2,
                         x1: origin_x,
                         y1: origin_y,
-                        x2: origin_x + ((circle_data[2]["x"] - origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (circle_data[1]["y"] - origin_y) * (circle_data[2]["y"] - origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (circle_data[2]["y"] - origin_y) ^ 2)),
-                        y2: origin_y - ((circle_data[2]["y"] - origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (circle_data[1]["y"] - origin_y) * (circle_data[2]["y"] - origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (circle_data[2]["y"] - origin_y) ^ 2))
+                        x2: origin_x + ((circle_data[2]["x"] - origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (- circle_data[1]["y"] + origin_y) * (- circle_data[2]["y"] + origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (-circle_data[2]["y"] + origin_y) ^ 2)),
+                        y2: origin_y - ((- circle_data[2]["y"] + origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (- circle_data[1]["y"] + origin_y) * (- circle_data[2]["y"] + origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (-circle_data[2]["y"] + origin_y) ^ 2))
                     }];
 
 let drag = d3.drag()
@@ -37,14 +37,14 @@ function update() {
         .attr('r', 20);
 
     vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"] },
-        { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[2]["x"], y2: circle_data[2]["y"] },
-        {
-            id: 2,
-            x1: origin_x,
-            y1: origin_y,
-            x2: origin_x+((circle_data[2]["x"]-origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (circle_data[1]["y"] - origin_y) * (circle_data[2]["y"] - origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (circle_data[2]["y"] - origin_y) ^ 2)),
-            y2: origin_y-((circle_data[2]["y"]-origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (circle_data[1]["y"] - origin_y) * (circle_data[2]["y"] - origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (circle_data[2]["y"] - origin_y) ^ 2))
-        }];
+                    { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[2]["x"], y2: circle_data[2]["y"] },
+                    {
+                        id: 2,
+                        x1: origin_x,
+                        y1: origin_y,
+                        x2: origin_x + ((circle_data[2]["x"] - origin_x) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (- circle_data[1]["y"] + origin_y) * (- circle_data[2]["y"] + origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (-circle_data[2]["y"] + origin_y) ^ 2)),
+                        y2: origin_y - ((- circle_data[2]["y"] + origin_y) * ((circle_data[1]["x"] - origin_x) * (circle_data[2]["x"] - origin_x) + (- circle_data[1]["y"] + origin_y) * (- circle_data[2]["y"] + origin_y)) / ((circle_data[2]["x"] - origin_x) ^ 2 + (-circle_data[2]["y"] + origin_y) ^ 2))
+                    }];
 
     d3.select('svg')
         .selectAll('line')
