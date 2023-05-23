@@ -1,6 +1,6 @@
 ﻿let origin_x = 200, origin_y = 300;
 let circle_data = [{ id: 0, x: 100, y: 100 }, { id: 1, x: 250, y: 70 }];
-let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "black", marker: "url(#arrowhead)" },
+let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"], y2: circle_data[0]["y"], stroke: "blue", marker: "url(#arrowhead_blue)" },
                     { id: 1, x1: origin_x, y1: origin_y, x2: circle_data[1]["x"], y2: circle_data[1]["y"], stroke: "black", marker: "url(#arrowhead)" },
                     {
                         id: 2,
