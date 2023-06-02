@@ -10,7 +10,11 @@ let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"],
                         y2: origin_y - ((- circle_data[1]["y"] + origin_y) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
                         stroke: "red",
                         marker: "url(#arrowhead_red)"
-                    }];
+    }];
+let vector_labels = [{ id: 0, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"},
+    { id: 1, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"},
+    { id: 2, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"}
+]
 
 let drag = d3.drag()
     .on('drag', handleDrag);
@@ -48,7 +52,11 @@ function update() {
                         y2: origin_y - ((- circle_data[1]["y"] + origin_y) * ((circle_data[0]["x"] - origin_x) * (circle_data[1]["x"] - origin_x) + (origin_y - circle_data[0]["y"]) * (origin_y - circle_data[1]["y"])) / ((circle_data[1]["x"] - origin_x) ** 2 + (origin_y - circle_data[1]["y"]) ** 2)),
                         stroke: "red",
                         marker: "url(#arrowhead_red)"
-                    }];
+        }];
+    vector_labels = [{ id: 0, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"},
+    { id: 1, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"},
+    { id: 2, x: 420, y: 30, fill: "black", text: "a = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )"}
+    ]
 
     d3.select('svg')
         .selectAll('line')
@@ -61,6 +69,15 @@ function update() {
         .attr('stroke-width', 4)
         .attr('stroke', function (d) { return d.stroke; })
         .attr('marker-end', function (d) { return d.marker; });
+
+    d3.select('svg')
+        .selectAll('text')
+        .data(vector_labels)
+        .join('text')
+        .attr('x', function (d) { return d.x; })
+        .attr('y', function (d) { return d.y; })
+        .attr('fill', function (d) { return d.fill; })
+        .text(function (d) {return d.text})
 }
 
 update();
