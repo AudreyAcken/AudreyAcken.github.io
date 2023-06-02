@@ -11,9 +11,10 @@ let vector_data = [{ id: 0, x1: origin_x, y1: origin_y, x2: circle_data[0]["x"],
                         stroke: "red",
                         marker: "url(#arrowhead_red)"
     }];
-let vector_labels = [{ id: 0, x: 420, y: 30, fill: "black", text: "a = ".concat("(", (((circle_data[1]["x"] - origin_x) * (1 / 20)).toFixed(2)).toString(), ", ", (((circle_data[1]["y"] - origin_y) * (1 / 20)).toFixed(2)).toString(),")")},
-    { id: 1, x: 420, y: 70, fill: "blue", text: "b = ".concat("(", (((circle_data[0]["x"] - origin_x) * (1 / 20)).toFixed(2)).toString(), ", ", (((circle_data[0]["y"] - origin_y) * (1 / 20)).toFixed(2)).toString(), ")")},
-                    { id: 2, x: 420, y: 110, fill: "red", text: "proj = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )")}
+let vector_labels = [{ id: 0, x: 420, y: 30, fill: "black", text: "a = ".concat("(", (((circle_data[1]["x"] - origin_x) * (1 / 20)).toFixed(2)).toString(), ", ", (-((circle_data[1]["y"] - origin_y) * (1 / 20)).toFixed(2)).toString(),")")},
+    { id: 1, x: 420, y: 70, fill: "blue", text: "b = ".concat("(", (((circle_data[0]["x"] - origin_x) * (1 / 20)).toFixed(2)).toString(), ", ", (-((circle_data[0]["y"] - origin_y) * (1 / 20)).toFixed(2)).toString(), ")")},
+    { id: 2, x: 420, y: 110, fill: "red", text: "proj = ".concat("(", ((circle_data[1]["x"] - origin_x) * (1 / 20)).toString(), ", )") },
+    { id: 3, x: 420, y: 150, fill: "black", text: "a • b = "}
                     ];
 
 let drag = d3.drag()
